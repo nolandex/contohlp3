@@ -7,8 +7,15 @@ import {
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Menu } from "lucide-react";
-import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
+
+// --- Perubahan Dimulai di Sini ---
+
+// 1. Tambahkan import Link dan config
+import Link from "next/link";
+import { config } from "@/config/data";
+
+// Hapus baris "import { Logo } from "./logo";" karena sudah tidak digunakan lagi.
 
 export const NavigationSheet = () => {
   return (
@@ -22,15 +29,16 @@ export const NavigationSheet = () => {
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <Logo />
+        {/* 2. Ganti <Logo /> dengan nama brand menggunakan <Link> */}
+        <Link href="/" className="font-bold text-lg">
+          {config.brandName}
+        </Link>
+        
         <NavMenu orientation="vertical" className="mt-12" />
 
-        <div className="mt-8 space-y-4">
-          <Button variant="outline" className="w-full sm:hidden">
-            Sign In
-          </Button>
-          <Button className="w-full xs:hidden">Get Started</Button>
-        </div>
+        {/* 3. Hapus seluruh div yang berisi tombol Sign In & Get Started */}
+        {/* <div className="mt-8 space-y-4"> ... </div> */}
+
       </SheetContent>
     </Sheet>
   );
