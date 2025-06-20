@@ -1,4 +1,19 @@
-const TestimonialCard = ({
+"use client";
+
+import Image from "next/image"; // <--- IMPORT Image
+import { useEffect, useState } from "react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"; // <--- IMPORT Avatar, AvatarFallback
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { StarIcon } from "lucide-react"; // <--- IMPORT StarIcon
+import { cn } from "@/lib/utils";
+import { config } from "@/config/data";
+
+const TestimonialCard = ({ // This component is now being used below
   testimonial,
 }: {
   testimonial: (typeof config.testimonials.items)[number];
@@ -70,3 +85,56 @@ const TestimonialCard = ({
     </div>
   </div>
 );
+
+
+export const Testimonial = () => { // <--- Changed to named export
+  const { testimonials } = config;
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  return (
+    <div
+      id="testimonials"
+      className="w-full max-w-screen-xl mx-auto py-6 xs:py-12 px-6"
+    >
+      <h2 className="mb-8 xs:mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">
+        {testimonials.title}
+      </h2>
+      <div className="container w-full mx-auto">
+        <Carousel setApi={setApi}>
+          <CarouselContent>
+            {/* --- FIX: Use the TestimonialCard component --- */}
+            {testimonials.items.map((testimonial) => (
+              <CarouselItem key={testimonial.id}>
+                <TestimonialCard testimonial={testimonial} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={cn("h-3.5 w-3.5 rounded-full border-2", {
+                "bg-primary border-primary": current === index + 1,
+              })}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// No longer need to export default Testimonial
