@@ -1,67 +1,3 @@
-"use client";
-
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
-import { StarIcon } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { config } from "@/config/data";
-
-const Testimonial = () => {
-  const { testimonials } = config;
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) return;
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  return (
-    <div
-      id="testimonials"
-      className="w-full max-w-screen-xl mx-auto py-6 xs:py-12 px-6"
-    >
-      <h2 className="mb-8 xs:mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">
-        {testimonials.title}
-      </h2>
-      <div className="container w-full mx-auto">
-        <Carousel setApi={setApi}>
-          <CarouselContent>
-            {testimonials.items.map((testimonial) => (
-              <CarouselItem key={testimonial.id}>
-                <TestimonialCard testimonial={testimonial} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className="flex items-center justify-center gap-2">
-          {Array.from({ length: count }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={cn("h-3.5 w-3.5 rounded-full border-2", {
-                "bg-primary border-primary": current === index + 1,
-              })}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const TestimonialCard = ({
   testimonial,
 }: {
@@ -73,7 +9,7 @@ const TestimonialCard = ({
         <Image
           src={testimonial.avatar}
           fill
-          alt={testimonial.name.replace(/"/g, "&quot;")} // Menggunakan &quot; untuk escaping
+          alt={testimonial.name}
           className="object-cover rounded-xl"
         />
         <div className="absolute top-1/4 right-0 translate-x-1/2 h-12 w-12 bg-primary rounded-full flex items-center justify-center">
@@ -117,7 +53,7 @@ const TestimonialCard = ({
           </div>
         </div>
         <p className="mt-6 text-lg sm:text-2xl lg:text-[1.75rem] xl:text-3xl leading-normal lg:!leading-normal font-semibold tracking-tight">
-          "{testimonial.testimonial}"
+          &quot;{testimonial.testimonial}&quot;
         </p>
         <div className="flex sm:hidden md:flex mt-6 items-center gap-4">
           <Avatar>
@@ -134,5 +70,3 @@ const TestimonialCard = ({
     </div>
   </div>
 );
-
-export default Testimonial;
