@@ -17,6 +17,10 @@ const iconMap = {
   GithubIcon: GithubIcon,
 };
 
+// --- REVISI 1: Buat tipe (type) untuk kunci ikon ---
+// Ini akan membuat tipe data yang isinya adalah "TwitterIcon" | "DribbbleIcon" | "TwitchIcon" | "GithubIcon"
+type IconKey = keyof typeof iconMap;
+
 const Footer = () => {
   const { footer } = config;
 
@@ -62,10 +66,22 @@ const Footer = () => {
         </span>
         <div className="flex items-center gap-5 text-muted-foreground">
           {footer.socialLinks.map(({ icon, href }, index) => {
-            const Icon = iconMap[icon];
+            // --- REVISI 2: Yakinkan TypeScript bahwa 'icon' adalah kunci yang valid ---
+            const Icon = iconMap[icon as IconKey];
+
+            // (Praktik Terbaik) Tambahkan fallback untuk mencegah error jika nama ikon salah
+            if (!Icon) return null;
+
             return (
-              <Link key={index} href={href} target="_blank">
-                <Icon className="h-5 w-5" />
+              <Link
+                key={index}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer" // Tambahan untuk keamanan
+              >
+                <Icon className="h-5 w-5 transition-colors hover:text-foreground" />
+                {/* Tambahan untuk aksesibilitas */}
+                <span className="sr-only">{icon.replace("Icon", "")}</span>
               </Link>
             );
           })}
