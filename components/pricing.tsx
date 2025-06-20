@@ -1,83 +1,65 @@
 "use client";
 
-import { CircleCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { CircleCheck } from "lucide-react";
 import { config } from "@/config/data";
-import Link from "next/link";
 
 const Pricing = () => {
   const { pricing } = config;
 
   return (
-    <section>
-      <div className="container space-y-8 py-12 md:py-16 lg:py-20">
-        <div className="mx-auto flex max-w-2xl flex-col items-center space-y-4 text-center">
-          <h2 className="font-heading text-4xl font-bold md:text-5xl">
-            {pricing.title}
-          </h2>
-          <p className="max-w-md text-balance leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            {pricing.description || "Choose the plan that’s right for you and start building."}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:mx-auto lg:max-w-4xl">
-          {pricing.items.map((plan) => (
-            <Card
-              key={plan.name}
-              className={cn(
-                "relative flex flex-col transition duration-200 ease-in-out",
-                {
-                  "border-2 border-primary shadow-lg": plan.isPopular,
-                  border: !plan.isPopular,
-                }
-              )}
+    <div id="pricing" className="max-w-screen-lg mx-auto py-12 xs:py-20 px-6">
+      <h1 className="text-4xl xs:text-5xl font-bold text-center tracking-tight">
+        {pricing.title}
+      </h1>
+      <div className="mt-8 xs:mt-14 grid grid-cols-1 lg:grid-cols-3 items-center gap-8 lg:gap-0">
+        {pricing.items.map((plan) => (
+          <div
+            key={plan.name}
+            className={cn(
+              "relative bg-accent/50 border p-7 rounded-xl lg:rounded-none lg:first:rounded-l-xl lg:last:rounded-r-xl",
+              {
+                "bg-background border-[2px] border-primary py-12 !rounded-xl":
+                  plan.isPopular,
+              }
+            )}
+          >
+            {plan.isPopular && (
+              <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2">
+                Most Popular
+              </Badge>
+            )}
+            <h3 className="text-lg font-medium">{plan.name}</h3>
+            <p className="mt-2 text-4xl font-bold">${plan.price}</p>
+            <p className="mt-4 font-medium text-muted-foreground">
+              {plan.description}
+            </p>
+            <Separator className="my-6" />
+            <ul className="space-y-2">
+              {plan.features.map((feature) => (
+                <li key={feature} className="flex items-start gap-2">
+                  <CircleCheck className="h-4 w-4 mt-1 text-green-600" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <Button
+              variant={plan.isPopular ? "default" : "outline"}
+              size="lg"
+              className="w-full mt-6 rounded-full"
+              asChild
             >
-              <CardHeader>
-                <CardTitle>{plan.name}</CardTitle>
-                {plan.isPopular && (
-                  <Badge variant="outline" className="absolute right-4 top-4">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardDescription>{plan.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="mb-6 mt-2 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-primary">
-                    ${plan.price}
-                  </span>
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
-                    /month
-                  </span>
-                </p>
-                <ul className="space-y-3 text-sm">
-                  {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <CircleCheck className="h-5 w-5 text-primary" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter className="justify-center pt-6">
-                <Button
-                  asChild
-                  variant={plan.isPopular ? "default" : "outline"}
-                  size="lg"
-                  className={cn(buttonVariants({ size: "lg" }), "w-full")}
-                >
-                  <Link href={plan.buttonLink} target="_blank" rel="noopener noreferrer">
-                    {plan.buttonText}
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+              <a href={plan.buttonLink} target="_blank" rel="noopener noreferrer">
+                {plan.buttonText}
+              </a>
+            </Button>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
