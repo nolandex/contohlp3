@@ -14,36 +14,42 @@ const features = [
     title: "Identify Opportunities",
     description:
       "Easily uncover untapped areas to explore and expand your reach effortlessly.",
+    image: "/images/1.jpg", // Gambar untuk fitur pertama
   },
   {
     icon: BookCheck,
     title: "Build Authority",
     description:
       "Create valuable content that resonates, inspires trust, and positions you as an expert.",
+    image: "/images/2.jpg", // Gambar untuk fitur kedua
   },
   {
     icon: ChartPie,
     title: "Instant Insights",
     description:
       "Gain immediate, actionable insights with a quick glance, enabling fast decision-making.",
+    image: "/images/3.jpg", // Gambar untuk fitur ketiga
   },
   {
     icon: Users,
     title: "Engage with Your Audience",
     description:
       "Boost audience engagement with interactive features like polls, quizzes, and forms.",
+    image: "/images/4.jpg", // Gambar untuk fitur keempat
   },
   {
     icon: FolderSync,
     title: "Automate Your Workflow",
     description:
       "Streamline your processes by automating repetitive tasks, saving time and reducing effort.",
+    image: "/images/5.jpg", // Gambar untuk fitur kelima
   },
   {
     icon: Zap,
     title: "Accelerate Growth",
     description:
       "Supercharge your growth by implementing strategies that drive results quickly and efficiently.",
+    image: "/images/6.jpg", // Gambar untuk fitur keenam
   },
 ];
 
@@ -57,7 +63,7 @@ const Features = () => {
         Boost Your Strategy with Smart Features
       </h2>
       <div className="mt-8 xs:mt-14 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
-        {features.map((feature) => (
+        {features.map((feature, index) => (
           <Card
             key={feature.title}
             className="flex flex-col border rounded-xl overflow-hidden shadow-none"
@@ -72,7 +78,11 @@ const Features = () => {
               </p>
             </CardHeader>
             <CardContent className="mt-auto px-0 pb-0">
-              <div className="bg-muted h-52 ml-6 rounded-tl-xl" />
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="h-52 ml-6 rounded-tl-xl object-cover"
+              />
             </CardContent>
           </Card>
         ))}
