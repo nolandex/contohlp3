@@ -4,25 +4,12 @@ export const config = {
   // --- NAMA BRAND & INFO UMUM ---
   brandName: "Bisnivo",
 
-  // --- BAGIAN NAVIGASI --- (BARU DITAMBAHKAN)
-  // Atur semua judul dan link untuk menu navigasi utama di sini.
+  // --- BAGIAN NAVIGASI ---
   navLinks: [
-    {
-      title: "Fitur",
-      href: "#features",
-    },
-    {
-      title: "Testimoni",
-      href: "#testimonials",
-    },
-    {
-      title: "Harga",
-      href: "#pricing",
-    },
-    {
-      title: "FAQ",
-      href: "#faq",
-    },
+    { title: "Fitur", href: "#features" },
+    { title: "Testimoni", href: "#testimonials" },
+    { title: "Harga", href: "#pricing" },
+    { title: "FAQ", href: "#faq" },
   ],
 
   // --- BAGIAN HERO ---
@@ -32,25 +19,16 @@ export const config = {
     description:
       "Dapatkan potret artistik berkualitas tinggi yang dibuat oleh teknologi AI canggih. Sempurna untuk foto profil media sosial, CV, atau hadiah unik.",
     buttons: [
-      {
-        text: "Lihat Paket Harga",
-        link: "#pricing",
-        icon: "ArrowUpRight",
-      },
+      { text: "Lihat Paket Harga", link: "#pricing", icon: "ArrowUpRight" },
       {
         text: "Hubungi Kami",
-        link: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20jasa%20AI%20potret.",
+        link: "https://wa.me/6285156779923",
         icon: "CirclePlay",
         variant: "outline",
       },
     ],
     image: "/images/hero-image.jpg",
   },
-
-  // (Sisa dari file tidak berubah: features, testimonials, pricing, faq, footer)
-  // ...
-  // ... (Saya persingkat agar tidak terlalu panjang, tapi kontennya sama seperti yang Anda berikan)
-  // ...
 
   // --- BAGIAN FITUR ---
   features: {
@@ -160,7 +138,7 @@ export const config = {
           "2 kredit perbaikan (retouch)",
         ],
         buttonText: "Pesan Paket Starter",
-        buttonLink: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Starter.",
+        buttonLink: "https://wa.me/6285156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Starter.",
       },
       {
         name: "Advanced",
@@ -175,7 +153,7 @@ export const config = {
           "5 kredit perbaikan (retouch)",
         ],
         buttonText: "Pesan Paket Advanced",
-        buttonLink: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Advanced.",
+        buttonLink: "https://wa.me/6285156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Advanced.",
         isPopular: true,
       },
       {
@@ -190,7 +168,7 @@ export const config = {
           "10 kredit perbaikan (retouch)",
         ],
         buttonText: "Pesan Paket Premium",
-        buttonLink: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium.",
+        buttonLink: "https://wa.me/6285156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium.",
       },
     ],
   },
@@ -238,33 +216,17 @@ export const config = {
   footer: {
     logo: {
       svg: `<svg id="logo-7" width="124" height="32" viewBox="0 0 124 32" fill="none" xmlns="http://www.w3.org/2000/svg">...</svg>`,
-      description:
-        "Menciptakan potret digital luar biasa yang membawa lebih banyak senyum di dunia maya.",
+      description: "Menciptakan potret digital luar biasa yang membawa lebih banyak senyum di dunia maya.",
     },
-    sections: [
-      {
-        title: "Layanan",
-        links: [
-          { title: "Tentang Kami", href: "#" },
-          { title: "Fitur", href: "#features" },
-          { title: "Galeri Hasil", href: "#" },
-          { title: "Harga", href: "#pricing" },
-        ],
-      },
-      {
-        title: "Dukungan",
-        links: [
-          { title: "FAQ", href: "#faq" },
-          { title: "Hubungi Kami (WA)", href: "https://wa.me/6285156779923" },
-          { title: "Syarat & Ketentuan", href: "#" },
-          { title: "Kebijakan Privasi", href: "#" },
-        ],
-      },
-    ],
+    // Bagian "Layanan" & "Dukungan" dikosongkan agar tidak tampil
+    sections: [],
+    // 5 Ikon sosial media baru sesuai permintaan
     socialLinks: [
-      { icon: "TwitterIcon", href: "#" }, 
-      { icon: "DribbbleIcon", href: "#" },
-      { icon: "GithubIcon", href: "#" },
+      { icon: "InstagramIcon", href: "https://www.instagram.com/bisnovo" },
+      { icon: "TiktokIcon", href: "https://www.tiktok.com/@bisnovo" },
+      { icon: "FacebookIcon", href: "https://www.facebook.com/share/1H87XB9aw7/" },
+      { icon: "WhatsappIcon", href: "https://wa.me/6285156779923" },
+      { icon: "MailIcon", href: "mailto:bisnovohq@gmail.com" },
     ],
     copyright: {
       text: "© {YEAR} Bisnivo. Hak Cipta Dilindungi.",
