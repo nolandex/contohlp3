@@ -73,7 +73,7 @@ const TestimonialCard = ({
         <Image
           src={testimonial.avatar}
           fill
-          alt={testimonial.name.replace(/"/g, "&quot;")} // Escape tanda kutip ganda dengan &quot;
+          alt={testimonial.name.replace(/"/g, "&quot;")} // Menggunakan &quot; untuk escaping
           className="object-cover rounded-xl"
         />
         <div className="absolute top-1/4 right-0 translate-x-1/2 h-12 w-12 bg-primary rounded-full flex items-center justify-center">
@@ -135,4 +135,4 @@ const TestimonialCard = ({
   </div>
 );
 
-export default Testimonial; // Pastikan ekspor default ada di sini
+export default Testimonial;
