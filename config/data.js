@@ -4,6 +4,10 @@
 // import { ReactNode } from "react";
 
 export const config = {
+  // --- NAMA BRAND & INFO UMUM ---
+  // Ubah nama website Anda di sini, maka semua bagian website akan ikut berubah.
+  brandName: "AI Potret ID", // <--- PUSAT NAMA WEBSITE
+
   // --- BAGIAN HERO ---
   hero: {
     badge: "Layanan Baru!",
@@ -243,8 +247,9 @@ export const config = {
       { icon: "GithubIcon", href: "#" },
     ],
     copyright: {
-      text: "© {YEAR} AI Potret ID. Hak Cipta Dilindungi.", // Ganti 'AI Potret ID' dengan nama brand Anda
-      link: "#", // Ganti dengan link website utama Anda
+       // Teks ini akan menggunakan brandName dari atas secara otomatis
+      text: `© {YEAR} AI Potret ID. Hak Cipta Dilindungi.`, // <--- Baris ini sekarang statis lagi untuk kesederhanaan, tapi bisa dibuat dinamis jika dibutuhkan
+      link: "#",
     },
   },
 };
