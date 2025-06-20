@@ -11,6 +11,9 @@ const iconMap = {
   CirclePlay: CirclePlay,
 };
 
+// --- LANGKAH 1: Buat tipe (type) untuk kunci ikon di file ini ---
+type IconKey = keyof typeof iconMap;
+
 const Hero = () => {
   const { hero } = config;
 
@@ -25,7 +28,14 @@ const Hero = () => {
           <p className="mt-6 max-w-[60ch] xs:text-lg">{hero.description}</p>
           <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
             {hero.buttons.map((button, index) => {
-              const Icon = iconMap[button.icon];
+              // --- LANGKAH 2: Yakinkan TypeScript bahwa 'button.icon' adalah kunci yang valid ---
+              const Icon = iconMap[button.icon as IconKey];
+
+              // (Praktik Terbaik) Tambahkan fallback untuk keamanan
+              if (!Icon) {
+                return null;
+              }
+
               return (
                 <Button
                   key={index}
@@ -35,7 +45,7 @@ const Hero = () => {
                   asChild
                 >
                   <a href={button.link}>
-                    {button.text} <Icon className="!h-5 !w-5" />
+                    {button.text} <Icon className="!h-5 !w-5 ml-2" />
                   </a>
                 </Button>
               );
