@@ -1,12 +1,9 @@
-// Anda bisa menempatkan ini di file seperti /config/data.ts atau /lib/config.js
-
-// Impor 'ReactNode' jika Anda menggunakan TypeScript dan ingin tipe yang lebih ketat untuk SVG
-// import { ReactNode } from "react";
+// Lokasi file: /config/data.js (atau /lib/config.js)
 
 export const config = {
   // --- NAMA BRAND & INFO UMUM ---
-  // Ubah nama website Anda di sini, maka semua bagian website akan ikut berubah.
-  brandName: "AI Potret ID", // <--- PUSAT NAMA WEBSITE
+  // Nama website Anda diatur di sini.
+  brandName: "Bisnovo",
 
   // --- BAGIAN HERO ---
   hero: {
@@ -17,17 +14,17 @@ export const config = {
     buttons: [
       {
         text: "Lihat Paket Harga",
-        link: "#pricing", // Arahkan ke bagian harga
+        link: "#pricing",
         icon: "ArrowUpRight",
       },
       {
         text: "Hubungi Kami",
-        link: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20jasa%20AI%20potret.", // Link WhatsApp langsung
+        link: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20jasa%20AI%20potret.",
         icon: "CirclePlay",
         variant: "outline",
       },
     ],
-    image: "/images/hero-image.jpg", // Ganti dengan gambar hero Anda
+    image: "/images/hero-image.jpg",
   },
 
   // --- BAGIAN FITUR ---
@@ -39,42 +36,42 @@ export const config = {
         title: "Proses Cepat & Efisien",
         description:
           "Tidak perlu menunggu lama. Potret AI Anda akan siap dalam hitungan jam, bahkan menit!",
-        image: "/images/fitur-1.jpg", // Ganti dengan gambar yang sesuai
+        image: "/images/fitur-1.jpg",
       },
       {
         icon: "BookCheck",
         title: "Gaya Artistik Beragam",
         description:
           "Pilih dari puluhan gaya seni yang unik, mulai dari realistik, kartun, hingga lukisan cat minyak.",
-        image: "/images/fitur-2.jpg", // Ganti dengan gambar yang sesuai
+        image: "/images/fitur-2.jpg",
       },
       {
         icon: "Goal",
         title: "Hasil Resolusi Tinggi",
         description:
           "Dapatkan file gambar dengan kualitas terbaik, tajam, dan siap untuk dicetak atau diunggah.",
-        image: "/images/fitur-3.jpg", // Ganti dengan gambar yang sesuai
+        image: "/images/fitur-3.jpg",
       },
       {
         icon: "Users",
         title: "Sempurna Untuk Semua Kebutuhan",
         description:
           "Cocok untuk foto profil LinkedIn, Instagram, CV, branding pribadi, atau sebagai hadiah.",
-        image: "/images/fitur-4.jpg", // Ganti dengan gambar yang sesuai
+        image: "/images/fitur-4.jpg",
       },
       {
         icon: "ChartPie",
         title: "Harga Terjangkau",
         description:
           "Nikmati kualitas potret studio profesional dengan biaya yang jauh lebih hemat.",
-        image: "/images/fitur-5.jpg", // Ganti dengan gambar yang sesuai
+        image: "/images/fitur-5.jpg",
       },
       {
         icon: "FolderSync",
         title: "Privasi Terjamin",
         description:
           "Kami menghargai privasi Anda. Foto yang Anda unggah akan dihapus setelah potret selesai dibuat.",
-        image: "/images/fitur-6.jpg", // Ganti dengan gambar yang sesuai
+        image: "/images/fitur-6.jpg",
       },
     ],
   },
@@ -128,7 +125,7 @@ export const config = {
     items: [
       {
         name: "Starter",
-        price: 19, // Harga dalam ribuan Rupiah, misalnya 19.000
+        price: 19,
         description: "Dapatkan 20 potret AI dengan 2 pilihan gaya unik.",
         features: [
           "Waktu proses ~5 jam",
@@ -215,7 +212,6 @@ export const config = {
   // --- BAGIAN FOOTER ---
   footer: {
     logo: {
-      // Ganti SVG ini dengan logo bisnis Anda jika ada
       svg: `<svg id="logo-7" width="124" height="32" viewBox="0 0 124 32" fill="none" xmlns="http://www.w3.org/2000/svg">...</svg>`,
       description:
         "Menciptakan potret digital luar biasa yang membawa lebih banyak senyum di dunia maya.",
@@ -226,7 +222,7 @@ export const config = {
         links: [
           { title: "Tentang Kami", href: "#" },
           { title: "Fitur", href: "#features" },
-          { title: "Galeri Hasil", href: "#" }, // Anda bisa membuat bagian galeri
+          { title: "Galeri Hasil", href: "#" },
           { title: "Harga", href: "#pricing" },
         ],
       },
@@ -234,21 +230,19 @@ export const config = {
         title: "Dukungan",
         links: [
           { title: "FAQ", href: "#faq" },
-          { title: "Hubungi Kami (WA)", href: "https://wa.me/085156779923" },
+          { title: "Hubungi Kami (WA)", href: "https://wa.me/6285156779923" },
           { title: "Syarat & Ketentuan", href: "#" },
           { title: "Kebijakan Privasi", href: "#" },
         ],
       },
     ],
     socialLinks: [
-      // Ganti link '#' dengan link media sosial Anda
       { icon: "TwitterIcon", href: "#" }, 
-      { icon: "DribbbleIcon", href: "#" }, // Mungkin lebih cocok Instagram atau TikTok
+      { icon: "DribbbleIcon", href: "#" },
       { icon: "GithubIcon", href: "#" },
     ],
     copyright: {
-       // Teks ini akan menggunakan brandName dari atas secara otomatis
-      text: `© {YEAR} AI Potret ID. Hak Cipta Dilindungi.`, // <--- Baris ini sekarang statis lagi untuk kesederhanaan, tapi bisa dibuat dinamis jika dibutuhkan
+      text: "© {YEAR} Bisnivo. Hak Cipta Dilindungi.",
       link: "#",
     },
   },
