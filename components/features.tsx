@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { config } from "@/config/data";
 
+// Peta ikon tetap sama
 const iconMap = {
   Goal: Goal,
   BookCheck: BookCheck,
@@ -20,6 +21,10 @@ const iconMap = {
   FolderSync: FolderSync,
   Zap: Zap,
 };
+
+// --- REVISI 1: Buat sebuah tipe (type) untuk kunci ikon ---
+// Ini secara otomatis membuat tipe yang isinya adalah "Goal" | "BookCheck" | "ChartPie" | dst.
+type IconKey = keyof typeof iconMap;
 
 const Features = () => {
   const { features } = config;
@@ -34,15 +39,25 @@ const Features = () => {
       </h2>
       <div className="mt-8 xs:mt-14 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
         {features.items.map((feature) => {
-          const Icon = iconMap[feature.icon];
+          // --- REVISI 2: Beri tahu TypeScript bahwa feature.icon adalah kunci yang valid ---
+          // Kita gunakan "as IconKey" untuk meyakinkan TypeScript.
+          const Icon = iconMap[feature.icon as IconKey];
+
+          // --- REVISI 3 (Praktik Terbaik): Tambahkan fallback ---
+          // Jika karena suatu alasan nama ikon salah/tidak ada, komponen ini tidak akan error.
+          if (!Icon) {
+            return null;
+          }
+
           return (
             <Card
               key={feature.title}
               className="flex flex-col border rounded-xl overflow-hidden shadow-none"
             >
               <CardHeader>
-                <Icon />
-                <h4 className="!mt-3 text-xl font-bold tracking-tight">
+                {/* --- REVISI 4 (Peningkatan): Beri ukuran pada ikon --- */}
+                <Icon className="w-8 h-8 text-primary" />
+                <h4 className="!mt-4 text-xl font-bold tracking-tight">
                   {feature.title}
                 </h4>
                 <p className="mt-1 text-muted-foreground text-sm xs:text-[17px]">
