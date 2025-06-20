@@ -1,64 +1,22 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { CircleCheck } from "lucide-react";
-
-const plans = [
-  {
-    name: "Starter",
-    price: 19,
-    description:
-      "Get 20 AI-generated portraits with 2 unique styles and filters.",
-    features: [
-      "5 hours turnaround time",
-      "20 AI portraits",
-      "Choice of 2 styles",
-      "Choice of 2 filters",
-      "2 retouch credits",
-    ],
-    buttonText: "Get 20 portraits in 5 hours",
-  },
-  {
-    name: "Advanced",
-    price: 29,
-    isRecommended: true,
-    description:
-      "Get 50 AI-generated portraits with 5 unique styles and filters.",
-    features: [
-      "3 hours turnaround time",
-      "50 AI portraits",
-      "Choice of 5 styles",
-      "Choice of 5 filters",
-      "5 retouch credits",
-    ],
-    buttonText: "Get 50 portraits in 3 hours",
-    isPopular: true,
-  },
-  {
-    name: "Premium",
-    price: 49,
-    description:
-      "Get 100 AI-generated portraits with 10 unique styles and filters.",
-    features: [
-      "1-hour turnaround time",
-      "100 AI portraits",
-      "Choice of 10 styles",
-      "Choice of 10 filters",
-      "10 retouch credits",
-    ],
-    buttonText: "Get 100 portraits in 1 hour",
-  },
-];
+import { config } from "@/config/data";
 
 const Pricing = () => {
+  const { pricing } = config;
+
   return (
     <div id="pricing" className="max-w-screen-lg mx-auto py-12 xs:py-20 px-6">
       <h1 className="text-4xl xs:text-5xl font-bold text-center tracking-tight">
-        Pricing
+        {pricing.title}
       </h1>
       <div className="mt-8 xs:mt-14 grid grid-cols-1 lg:grid-cols-3 items-center gap-8 lg:gap-0">
-        {plans.map((plan) => (
+        {pricing.items.map((plan) => (
           <div
             key={plan.name}
             className={cn(
@@ -92,8 +50,11 @@ const Pricing = () => {
               variant={plan.isPopular ? "default" : "outline"}
               size="lg"
               className="w-full mt-6 rounded-full"
+              asChild
             >
-              {plan.buttonText}
+              <a href={plan.buttonLink} target="_blank" rel="noopener noreferrer">
+                {plan.buttonText}
+              </a>
             </Button>
           </div>
         ))}
