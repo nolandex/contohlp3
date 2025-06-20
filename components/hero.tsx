@@ -1,7 +1,8 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button"; // <-- 1. Impor buttonVariants
+import type { VariantProps } from "class-variance-authority"; // <-- 2. Impor tipe VariantProps
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Image from "next/image";
 import { config } from "@/config/data";
@@ -10,9 +11,10 @@ const iconMap = {
   ArrowUpRight: ArrowUpRight,
   CirclePlay: CirclePlay,
 };
-
-// --- LANGKAH 1: Buat tipe (type) untuk kunci ikon di file ini ---
 type IconKey = keyof typeof iconMap;
+
+// --- 3. Buat tipe data spesifik untuk varian tombol ---
+type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
 
 const Hero = () => {
   const { hero } = config;
@@ -28,19 +30,15 @@ const Hero = () => {
           <p className="mt-6 max-w-[60ch] xs:text-lg">{hero.description}</p>
           <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
             {hero.buttons.map((button, index) => {
-              // --- LANGKAH 2: Yakinkan TypeScript bahwa 'button.icon' adalah kunci yang valid ---
               const Icon = iconMap[button.icon as IconKey];
-
-              // (Praktik Terbaik) Tambahkan fallback untuk keamanan
-              if (!Icon) {
-                return null;
-              }
+              if (!Icon) return null;
 
               return (
                 <Button
                   key={index}
                   size="lg"
-                  variant={button.variant || "default"}
+                  // --- 4. Gunakan tipe yang sudah dibuat ---
+                  variant={button.variant as ButtonVariant || "default"}
                   className="w-full sm:w-auto rounded-full text-base"
                   asChild
                 >
