@@ -8,11 +8,6 @@ import { cn } from "@/lib/utils";
 import { config } from "@/config/data";
 import Link from "next/link";
 
-interface PlanFeature {
-  text: string;
-  included: boolean;
-}
-
 const Pricing = () => {
   const { pricing } = config;
 
@@ -60,19 +55,8 @@ const Pricing = () => {
                 <ul className="space-y-3 text-sm">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2">
-                      <CircleCheck
-                        className={cn(
-                          "h-5 w-5",
-                          typeof feature === "string" ? "text-primary" : feature.included ? "text-primary" : "text-muted-foreground"
-                        )}
-                      />
-                      <span
-                        className={cn({
-                          "text-muted-foreground line-through": typeof feature !== "string" && !feature.included,
-                        })}
-                      >
-                        {typeof feature === "string" ? feature : feature.text}
-                      </span>
+                      <CircleCheck className="h-5 w-5 text-primary" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
