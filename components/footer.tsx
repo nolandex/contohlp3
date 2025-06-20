@@ -1,7 +1,6 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-// 1. Impor ikon baru dari lucide-react
 import {
   Instagram,
   Music, // Digunakan untuk TikTok
@@ -12,7 +11,6 @@ import {
 import Link from "next/link";
 import { config } from "@/config/data";
 
-// 2. Peta ikon diperbarui untuk 5 sosial media baru
 const iconMap = {
   InstagramIcon: Instagram,
   TiktokIcon: Music,
@@ -35,21 +33,23 @@ const Footer = () => {
           <p className="mt-4 text-muted-foreground">{footer.logo.description}</p>
         </div>
 
-        {/* Karena sections di data.js kosong, bagian ini tidak akan ditampilkan */}
         {footer.sections.map(({ title, links }) => (
           <div key={title} className="xl:justify-self-end">
             <h6 className="font-semibold text-foreground">{title}</h6>
             <ul className="mt-6 space-y-4">
-              {links.map(({ title, href }) => (
-                <li key={title}>
-                  <Link
-                    href={href}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    {title}
-                  </Link>
-                </li>
-              ))}
+              {/* PERUBAHAN DI SINI: Tambahkan pengecekan sebelum mapping */}
+              {links &&
+                Array.isArray(links) &&
+                links.map(({ title, href }) => (
+                  <li key={title}>
+                    <Link
+                      href={href}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      {title}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
         ))}
@@ -71,7 +71,7 @@ const Footer = () => {
               <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
                 <IconComponent className="h-5 w-5 transition-colors hover:text-foreground" />
                 <span className="sr-only">{icon.replace("Icon", "")}</span>
-              </Link>
+              </A>
             );
           })}
         </div>
