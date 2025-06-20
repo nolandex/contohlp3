@@ -1,188 +1,250 @@
+// Anda bisa menempatkan ini di file seperti /config/data.ts atau /lib/config.js
+
+// Impor 'ReactNode' jika Anda menggunakan TypeScript dan ingin tipe yang lebih ketat untuk SVG
+// import { ReactNode } from "react";
+
 export const config = {
+  // --- BAGIAN HERO ---
   hero: {
-    badge: "Paket Bisnis Online",
-    title: "Bangun Bisnis Online dalam Sekejap",
+    badge: "Layanan Baru!",
+    title: "Ubah Foto Biasa Jadi Potret Luar Biasa dengan AI",
     description:
-      "Bisnovo membantu Anda memiliki website, konten sosial media, chatbot, dan strategi promosi hanya dalam satu paket. Tanpa ribet. Tanpa coding.",
+      "Dapatkan potret artistik berkualitas tinggi yang dibuat oleh teknologi AI canggih. Sempurna untuk foto profil media sosial, CV, atau hadiah unik.",
     buttons: [
       {
-        text: "Pesan Sekarang",
-        link: "https://wa.me/085156779923?text=Halo%2C%20saya%20ingin%20memesan%20Paket%20Setup%20Bisnis%20dari%20Bisnovo",
+        text: "Lihat Paket Harga",
+        link: "#pricing", // Arahkan ke bagian harga
         icon: "ArrowUpRight",
       },
       {
-        text: "Lihat Demo",
-        link: "#demo",
+        text: "Hubungi Kami",
+        link: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20jasa%20AI%20potret.", // Link WhatsApp langsung
         icon: "CirclePlay",
         variant: "outline",
       },
     ],
-    image: "/images/bisnovo-hero.png",
+    image: "/images/hero-image.jpg", // Ganti dengan gambar hero Anda
   },
 
+  // --- BAGIAN FITUR ---
   features: {
-    title: "Semua Kebutuhan Digital Anda dalam Satu Paket",
+    title: "Kenapa Memilih Layanan Kami?",
     items: [
       {
-        icon: "Globe",
-        title: "Website Profesional",
-        description: "Dibuat cepat dan mobile-friendly, tampilkan produk atau jasa Anda secara elegan.",
-        image: "/images/website.png",
+        icon: "Zap",
+        title: "Proses Cepat & Efisien",
+        description:
+          "Tidak perlu menunggu lama. Potret AI Anda akan siap dalam hitungan jam, bahkan menit!",
+        image: "/images/fitur-1.jpg", // Ganti dengan gambar yang sesuai
       },
       {
-        icon: "MessageCircleMore",
-        title: "Chatbot WhatsApp & Instagram",
-        description: "Auto-respon & bantu closing pelanggan tanpa harus standby terus.",
-        image: "/images/chatbot.png",
+        icon: "BookCheck",
+        title: "Gaya Artistik Beragam",
+        description:
+          "Pilih dari puluhan gaya seni yang unik, mulai dari realistik, kartun, hingga lukisan cat minyak.",
+        image: "/images/fitur-2.jpg", // Ganti dengan gambar yang sesuai
       },
       {
-        icon: "LayoutGrid",
-        title: "Konten Sosial Media",
-        description: "30+ desain konten siap posting, cocok untuk branding & promosi.",
-        image: "/images/contents.png",
-      },
-      {
-        icon: "TrendingUp",
-        title: "Booster Sosmed",
-        description: "Strategi engagement untuk menaikkan reach & followers akun Anda.",
-        image: "/images/booster.png",
-      },
-      {
-        icon: "PenLine",
-        title: "Trik Copywriting",
-        description: "Template kata-kata jualan yang terbukti menarik minat beli.",
-        image: "/images/copywriting.png",
+        icon: "Goal",
+        title: "Hasil Resolusi Tinggi",
+        description:
+          "Dapatkan file gambar dengan kualitas terbaik, tajam, dan siap untuk dicetak atau diunggah.",
+        image: "/images/fitur-3.jpg", // Ganti dengan gambar yang sesuai
       },
       {
         icon: "Users",
-        title: "Program Reseller",
-        description: "Jual ulang dan dapatkan profit Rp20.000 per penjualan. Gratis bergabung.",
-        image: "/images/reseller.png",
+        title: "Sempurna Untuk Semua Kebutuhan",
+        description:
+          "Cocok untuk foto profil LinkedIn, Instagram, CV, branding pribadi, atau sebagai hadiah.",
+        image: "/images/fitur-4.jpg", // Ganti dengan gambar yang sesuai
+      },
+      {
+        icon: "ChartPie",
+        title: "Harga Terjangkau",
+        description:
+          "Nikmati kualitas potret studio profesional dengan biaya yang jauh lebih hemat.",
+        image: "/images/fitur-5.jpg", // Ganti dengan gambar yang sesuai
+      },
+      {
+        icon: "FolderSync",
+        title: "Privasi Terjamin",
+        description:
+          "Kami menghargai privasi Anda. Foto yang Anda unggah akan dihapus setelah potret selesai dibuat.",
+        image: "/images/fitur-6.jpg", // Ganti dengan gambar yang sesuai
       },
     ],
   },
 
+  // --- BAGIAN TESTIMONI ---
   testimonials: {
-    title: "Apa Kata Mereka",
+    title: "Apa Kata Mereka?",
     items: [
       {
         id: 1,
-        name: "Ayu Wulandari",
-        designation: "Pemilik Online Shop",
-        company: "DasterAyuu",
+        name: "Andi Saputra",
+        designation: "Selebgram",
+        company: "@andisaputra",
         testimonial:
-          "Dulu bingung mulai dari mana. Setelah pakai Bisnovo, langsung punya website dan konten jualan! Worth it banget.",
-        avatar: "https://randomuser.me/api/portraits/women/5.jpg",
+          "Keren banget hasilnya! Foto profilku jadi lebih profesional dan menarik banyak perhatian. Prosesnya juga cepet banget. Recommended!",
+        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
       },
       {
         id: 2,
-        name: "Denny Firmansyah",
-        designation: "Reseller Bisnovo",
-        company: "DF Agency",
+        name: "Citra Lestari",
+        designation: "Mahasiswi",
+        company: "Universitas Gadjah Mada",
         testimonial:
-          "Jadi reseller Bisnovo gampang banget. Tinggal promosiin link aja, semua alat jualan udah disiapin.",
-        avatar: "https://randomuser.me/api/portraits/men/10.jpg",
+          "Aku pakai ini buat foto CV dan LinkedIn. Hasilnya rapi dan profesional, beda dari yang lain. Temen-temenku sampai nanya bikin di mana.",
+        avatar: "https://randomuser.me/api/portraits/women/2.jpg",
       },
       {
         id: 3,
-        name: "Nurul Azizah",
-        designation: "Mahasiswa & Freelancer",
-        company: "-",
+        name: "Budi Santoso",
+        designation: "Freelancer",
+        company: "Upwork",
         testimonial:
-          "Aku order buat bantu klien UMKM. Semua tool dari Bisnovo langsung bisa dipakai. Gak nyangka cuma Rp200 ribu.",
-        avatar: "https://randomuser.me/api/portraits/women/8.jpg",
+          "Sebagai freelancer, branding itu penting. Layanan ini bantu aku bikin foto profil yang 'menjual' dan terpercaya. Harganya juga pas di kantong.",
+        avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+      },
+      {
+        id: 4,
+        name: "Dewi Anggraini",
+        designation: "Pengusaha",
+        company: "Kue Lezat",
+        testimonial:
+          "Saya pesan untuk hadiah ulang tahun suami, dan dia suka banget! Hasilnya unik dan artistik. Pelayanannya juga ramah via WhatsApp.",
+        avatar: "https://randomuser.me/api/portraits/women/4.jpg",
       },
     ],
   },
 
+  // --- BAGIAN HARGA ---
   pricing: {
-    title: "Paket Setup Bisnis Online",
+    title: "Paket Harga",
     items: [
       {
-        name: "Bisnovo Basic",
-        price: 200000,
-        description:
-          "Paket lengkap setup bisnis online: website, konten, chatbot, copywriting, dan strategi promosi.",
+        name: "Starter",
+        price: 19, // Harga dalam ribuan Rupiah, misalnya 19.000
+        description: "Dapatkan 20 potret AI dengan 2 pilihan gaya unik.",
         features: [
-          "Website profesional (custom domain)",
-          "Chatbot WhatsApp & IG",
-          "30+ desain konten siap pakai",
-          "Strategi boost sosial media",
-          "Template copywriting jualan",
-          "Program reseller (gratis)",
+          "Waktu proses ~5 jam",
+          "20 potret AI",
+          "Pilihan 2 gaya",
+          "Pilihan 2 filter",
+          "2 kredit perbaikan (retouch)",
         ],
-        buttonText: "Pesan Sekarang via WhatsApp",
-        buttonLink: "https://wa.me/085156779923?text=Halo%2C%20saya%20ingin%20memesan%20Paket%20Bisnovo",
+        buttonText: "Pesan Paket Starter",
+        buttonLink: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Starter.",
+      },
+      {
+        name: "Advanced",
+        price: 29,
         isRecommended: true,
+        description: "Dapatkan 50 potret AI dengan 5 pilihan gaya unik.",
+        features: [
+          "Waktu proses ~3 jam",
+          "50 potret AI",
+          "Pilihan 5 gaya",
+          "Pilihan 5 filter",
+          "5 kredit perbaikan (retouch)",
+        ],
+        buttonText: "Pesan Paket Advanced",
+        buttonLink: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Advanced.",
+        isPopular: true,
+      },
+      {
+        name: "Premium",
+        price: 49,
+        description: "Dapatkan 100 potret AI dengan 10 pilihan gaya unik.",
+        features: [
+          "Waktu proses prioritas ~1 jam",
+          "100 potret AI",
+          "Pilihan 10 gaya",
+          "Pilihan 10 filter",
+          "10 kredit perbaikan (retouch)",
+        ],
+        buttonText: "Pesan Paket Premium",
+        buttonLink: "https://wa.me/085156779923?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium.",
       },
     ],
   },
 
+  // --- BAGIAN FAQ (PERTANYAAN UMUM) ---
   faq: {
-    title: "Pertanyaan Umum",
-    description: "Temukan jawaban dari pertanyaan yang sering ditanyakan seputar layanan Bisnovo.",
+    title: "Pertanyaan yang Sering Diajukan",
+    description:
+      "Temukan jawaban cepat untuk pertanyaan umum mengenai layanan kami.",
     items: [
       {
-        question: "Apakah saya harus bisa coding untuk menggunakan Bisnovo?",
-        answer: "Tidak sama sekali. Semua sudah kami siapkan, Anda tinggal terima jadi dan langsung gunakan.",
-      },
-      {
-        question: "Apakah bisa digunakan untuk bisnis dropship atau reseller?",
+        question: "Bagaimana cara kerjanya?",
         answer:
-          "Bisa. Justru kami mendesain Bisnovo agar cocok dipakai reseller, dropshipper, dan pemula sekalipun.",
+          "Anda cukup mengirimkan beberapa foto selfie Anda, pilih paket dan gaya yang diinginkan, lalu lakukan pembayaran. Kami akan memprosesnya dan mengirimkan hasilnya langsung kepada Anda.",
       },
       {
-        question: "Apakah saya bisa menjual kembali layanan Bisnovo?",
+        question: "Foto seperti apa yang harus saya kirim?",
         answer:
-          "Ya! Anda bisa jadi reseller Bisnovo secara gratis dan dapat profit Rp20.000 per penjualan. Kami siapkan tools dan web reseller-nya.",
+          "Kirimkan 10-15 foto selfie dengan berbagai ekspresi dan sudut pandang, serta pencahayaan yang baik. Hindari menggunakan kacamata hitam, masker, atau foto yang buram.",
       },
       {
-        question: "Berapa lama proses setup setelah saya order?",
-        answer: "Proses setup biasanya 1–2 hari kerja setelah data lengkap kami terima.",
+        question: "Berapa lama proses pembuatannya?",
+        answer:
+          "Tergantung pada paket yang Anda pilih. Paket Premium kami memiliki waktu proses prioritas sekitar 1 jam, sementara paket lain berkisar antara 3-5 jam.",
+      },
+      {
+        question: "Dalam format apa saya akan menerima hasilnya?",
+        answer:
+          "Anda akan menerima file gambar dalam format JPG atau PNG dengan resolusi tinggi yang bisa langsung Anda gunakan atau cetak.",
+      },
+      {
+        question: "Apakah privasi foto saya aman?",
+        answer:
+          "Tentu saja. Kami sangat menjaga privasi pelanggan. Foto asli yang Anda kirim akan kami hapus dari sistem kami setelah potret AI Anda selesai dibuat dan dikirimkan.",
+      },
+      {
+        question: "Bisakah saya meminta revisi?",
+        answer:
+          "Setiap paket memiliki 'kredit perbaikan' (retouch credit) yang bisa Anda gunakan jika ada detail kecil yang ingin disesuaikan. Hubungi kami untuk info lebih lanjut.",
       },
     ],
   },
 
+  // --- BAGIAN FOOTER ---
   footer: {
     logo: {
-      svg: "", // masukkan SVG logo Bisnovo jika ada
+      // Ganti SVG ini dengan logo bisnis Anda jika ada
+      svg: `<svg id="logo-7" width="124" height="32" viewBox="0 0 124 32" fill="none" xmlns="http://www.w3.org/2000/svg">...</svg>`,
       description:
-        "Bisnovo membantu Anda membangun bisnis online dari nol — dengan website, konten, chatbot, dan strategi promosi dalam satu paket.",
+        "Menciptakan potret digital luar biasa yang membawa lebih banyak senyum di dunia maya.",
     },
     sections: [
       {
-        title: "Produk",
+        title: "Layanan",
         links: [
-          { title: "Paket Setup Bisnis", href: "#pricing" },
+          { title: "Tentang Kami", href: "#" },
           { title: "Fitur", href: "#features" },
-          { title: "Demo", href: "#demo" },
-          { title: "Testimoni", href: "#testimonials" },
+          { title: "Galeri Hasil", href: "#" }, // Anda bisa membuat bagian galeri
+          { title: "Harga", href: "#pricing" },
+        ],
+      },
+      {
+        title: "Dukungan",
+        links: [
           { title: "FAQ", href: "#faq" },
-        ],
-      },
-      {
-        title: "Perusahaan",
-        links: [
-          { title: "Tentang Bisnovo", href: "#" },
-          { title: "Gabung Reseller", href: "https://wa.me/085156779923?text=Halo%2C%20saya%20ingin%20gabung%20reseller%20Bisnovo" },
-          { title: "Kontak", href: "#" },
-        ],
-      },
-      {
-        title: "Legal",
-        links: [
+          { title: "Hubungi Kami (WA)", href: "https://wa.me/085156779923" },
           { title: "Syarat & Ketentuan", href: "#" },
           { title: "Kebijakan Privasi", href: "#" },
         ],
       },
     ],
     socialLinks: [
-      { icon: "Instagram", href: "https://instagram.com/nolandavidco" },
-      { icon: "WhatsApp", href: "https://wa.me/085156779923" },
+      // Ganti link '#' dengan link media sosial Anda
+      { icon: "TwitterIcon", href: "#" }, 
+      { icon: "DribbbleIcon", href: "#" }, // Mungkin lebih cocok Instagram atau TikTok
+      { icon: "GithubIcon", href: "#" },
     ],
     copyright: {
-      text: "© 2025 Bisnovo. All rights reserved.",
-      link: "https://bisnovo.my.id",
+      text: "© {YEAR} AI Potret ID. Hak Cipta Dilindungi.", // Ganti 'AI Potret ID' dengan nama brand Anda
+      link: "#", // Ganti dengan link website utama Anda
     },
   },
 };
