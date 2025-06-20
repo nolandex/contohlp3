@@ -94,7 +94,7 @@ type Config = {
 // --- KONTEN KONFIGURASI ---
 
 export const config: Config = {
-  brandName: "Bisnivo",
+  brandName: "Bisnovo",
   navLinks: [
     { title: "Fitur", href: "#features" },
     { title: "Testimoni", href: "#testimonials" },
