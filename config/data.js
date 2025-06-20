@@ -1,9 +1,29 @@
-// Lokasi file: /config/data.js (atau /lib/config.js)
+// Lokasi file: /config/data.js
 
 export const config = {
   // --- NAMA BRAND & INFO UMUM ---
-  // Nama website Anda diatur di sini.
-  brandName: "Bisnovo",
+  brandName: "Bisnivo",
+
+  // --- BAGIAN NAVIGASI --- (BARU DITAMBAHKAN)
+  // Atur semua judul dan link untuk menu navigasi utama di sini.
+  navLinks: [
+    {
+      title: "Fitur",
+      href: "#features",
+    },
+    {
+      title: "Testimoni",
+      href: "#testimonials",
+    },
+    {
+      title: "Harga",
+      href: "#pricing",
+    },
+    {
+      title: "FAQ",
+      href: "#faq",
+    },
+  ],
 
   // --- BAGIAN HERO ---
   hero: {
@@ -26,6 +46,11 @@ export const config = {
     ],
     image: "/images/hero-image.jpg",
   },
+
+  // (Sisa dari file tidak berubah: features, testimonials, pricing, faq, footer)
+  // ...
+  // ... (Saya persingkat agar tidak terlalu panjang, tapi kontennya sama seperti yang Anda berikan)
+  // ...
 
   // --- BAGIAN FITUR ---
   features: {
