@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Logo } from "./logo";
+// Impor yang dibutuhkan
+import { config } from "@/config/data"; // 1. Impor konfigurasi dari file Anda
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 import ThemeToggle from "../theme-toggle";
@@ -8,19 +8,21 @@ const Navbar = () => {
   return (
     <nav className="h-16 bg-background border-b border-accent">
       <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6">
-        <Logo />
+        {/* Nama Website dari File Konfigurasi */}
+        <a href="/" className="font-bold text-lg">
+          {config.brandName} {/* 2. Gunakan nama brand dari file config */}
+        </a>
 
-        {/* Desktop Menu */}
-        <NavMenu className="hidden md:block" />
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center gap-8">
+          <NavMenu />
+        </div>
 
         <div className="flex items-center gap-3">
+          {/* Tombol Ganti Tema */}
           <ThemeToggle />
-          <Button variant="outline" className="hidden sm:inline-flex">
-            Sign In
-          </Button>
-          <Button className="hidden xs:inline-flex">Get Started</Button>
-
-          {/* Mobile Menu */}
+          
+          {/* Menu Mobile */}
           <div className="md:hidden">
             <NavigationSheet />
           </div>
