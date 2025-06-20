@@ -37,7 +37,6 @@ const Footer = () => {
           <div key={title} className="xl:justify-self-end">
             <h6 className="font-semibold text-foreground">{title}</h6>
             <ul className="mt-6 space-y-4">
-              {/* PERUBAHAN DI SINI: Tambahkan pengecekan sebelum mapping */}
               {links &&
                 Array.isArray(links) &&
                 links.map(({ title, href }) => (
@@ -71,7 +70,8 @@ const Footer = () => {
               <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
                 <IconComponent className="h-5 w-5 transition-colors hover:text-foreground" />
                 <span className="sr-only">{icon.replace("Icon", "")}</span>
-              </A>
+              </Link> 
+              // ^-- KESALAHANNYA DI SINI, SEKARANG SUDAH BENAR MENJADI </Link>
             );
           })}
         </div>
@@ -81,3 +81,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
